@@ -1,0 +1,407 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="bootstrap-5.3.2-dist/css/bootstrap.css">
+  <link rel="stylesheet" href="startscherm/style.css">
+
+  <!-- Naam: Clearcomm google fonts links  -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Courgette&display=swap" rel="stylesheet">
+
+<!-- links voor datum startscherm-->
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&display=swap" rel="stylesheet"/>
+
+<!-- Chatbot link -->
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@48,400,0,0"/>
+
+<script src="startscherm/script.js" defer></script>
+<script src="bootstrap-5.3.2-dist/js/bootstrap.js" defer></script>
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
+
+<script src="https://cdnjs.cloudflare.com/ajax/libs/slick-carousel/1.6.0/slick.js"></script>
+
+<title>ClearcommStart</title>
+</head>
+
+<body>
+
+  <!-- Navigatie bar -->
+  <nav class="navbar navbar-expand-lg navbar-light bg-light">
+    <a href="index.html"><img src="images/Logo2.0.png" width="50" height="50" alt="Logo"></a>
+    <a class="navbar-brand" href="index.html">EenLink</a>
+    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNavAltMarkup" aria-controls="navbarNavAltMarkup" aria-expanded="false" aria-label="Toggle navigation">
+      <span class="navbar-toggler-icon"></span>
+    </button>
+    <div class="collapse navbar-collapse" id="navbarNavAltMarkup">
+      <div class="navbar-nav">
+        <!-- <a class="nav-item nav-link active" href="#">Home <span class="sr-only">(current)</span></a> -->
+        <!-- <a class="nav-item nav-link" href="#">Features</a> -->
+        <!-- <a class="nav-item nav-link" href="#">Pricing</a> -->
+        <!-- <a class="nav-item nav-link disabled" href="#">Disabled</a> -->
+      </div>
+    </div>
+  </nav>
+
+
+  <div class="container">
+    <div class="row">
+      <div class="col-sm">
+        <!-- Uitvoering datum beginscherm -->
+        <div class="container-date">
+          <!-- <div class="date-container"></div> -->
+          <script>
+            // fill the month table with column headings
+          function day_title(day_name) {
+              document.write("<div class='c-cal__col'>" + day_name + "</div>");
+            }
+            // fills the month table with numbers
+          function fill_table(month, month_length, indexMonth) {
+              day = 1;
+              // begin the new month table
+              document.write("<div class='c-main c-main-" + indexMonth + "'>");
+              //document.write("<b>"+month+" "+year+"</b>")
+          
+              // column headings
+              document.write("<div class='c-cal__row'>");
+              day_title("Z");
+              day_title("M");
+              day_title("D");
+              day_title("W");
+              day_title("D");
+              day_title("V");
+              day_title("Z");
+              document.write("</div>");
+          
+              // pad cells before first day of month
+              document.write("<div class='c-cal__row'>");
+              for (var i = 1; i < start_day; i++) {
+                if (start_day > 7) {
+                } else {
+                  document.write("<div class='c-cal__cel'></div>");
+                }
+              }
+          
+              // fill the first week of days
+              for (var i = start_day; i < 8; i++) {
+                document.write(
+                  "<div data-day='2023-" +
+                    indexMonth +
+                    "-0" +
+                    day +
+                    "'class='c-cal__cel'><p>" +
+                    day +
+                    "</p></div>"
+                );
+                day++;
+              }
+              document.write("</div>");
+          
+              // fill the remaining weeks
+              while (day <= month_length) {
+                document.write("<div class='c-cal__row'>");
+                for (var i = 1; i <= 7 && day <= month_length; i++) {
+                  if (day >= 1 && day <= 9) {
+                    document.write(
+                      "<div data-day='2023-" +
+                        indexMonth +
+                        "-0" +
+                        day +
+                        "'class='c-cal__cel'><p>" +
+                        day +
+                        "</p></div>"
+                    );
+                    day++;
+                  } else {
+                    document.write(
+                      "<div data-day='2023-" +
+                        indexMonth +
+                        "-" +
+                        day +
+                        "' class='c-cal__cel'><p>" +
+                        day +
+                        "</p></div>"
+                    );
+                    day++;
+                  }
+                }
+                document.write("</div>");
+                // the first day of the next month
+                start_day = i;
+              }
+          
+              document.write("</div>");
+            }
+          </script>
+          <header>
+            <div class="wrapper">
+              <div class="c-monthyear">
+              <div class="c-month">
+                  <span id="prev" class="prev fa fa-angle-left" aria-hidden="true"> <div class="arrows">&lt;</div> </span>
+                  <div id="c-paginator">
+                    <span class="c-paginator__month">JANUARI</span>
+                    <span class="c-paginator__month">FEBRUARI</span>
+                    <span class="c-paginator__month">MAART</span>
+                    <span class="c-paginator__month">APRIL</span>
+                    <span class="c-paginator__month">MEI</span>
+                    <span class="c-paginator__month">JUNI</span>
+                    <span class="c-paginator__month">JULI</span>
+                    <span class="c-paginator__month">AUGUSTUS</span>
+                    <span class="c-paginator__month">SEPTEMBER</span>
+                    <span class="c-paginator__month">OKTOBER</span>
+                    <span class="c-paginator__month">NOVEMBER</span>
+                    <span class="c-paginator__month">DECEMBER</span>
+                  </div>
+                  <span id="next" class="next fa fa-angle-right" aria-hidden="true"> <div class="arrows">&gt;</div> </span>
+                </div>
+                <span class="c-paginator__year">2023</span>
+              </div>
+              <div class="c-sort">
+                <a class="o-btn c-today__btn" href="javascript:;">Vandaag</a>
+              </div>
+            </div>
+          </header>
+          <div class="wrapper">
+            <div class="c-calendar">
+              <div class="c-calendar__style c-aside">
+                <a class="c-add o-btn js-event__add" href="javascript:;">Toevoegen <span class="fa fa-plus"></span></a>
+                <div class="c-aside__day">
+                  <span class="c-aside__num"></span> <span class="c-aside__month"></span>
+                </div>
+                <div class="c-aside__eventList">
+                </div>
+              </div>
+              <div class="c-cal__container c-calendar__style">
+                <script>
+                
+                // CAHNGE the below variable to the CURRENT YEAR
+                year = 2023;
+          
+                // first day of the week of the new year
+                today = new Date("Januari 1, " + year);
+                start_day = today.getDay() + 1;
+                fill_table("Januari", 31, "01");
+                fill_table("Februari", 28, "02");
+                fill_table("Maart", 31, "03");
+                fill_table("April", 30, "04");
+                fill_table("Mei", 31, "05");
+                fill_table("Juni", 30, "06");
+                fill_table("Juli", 31, "07");
+                fill_table("Augustus", 31, "08");
+                fill_table("September", 30, "09");
+                fill_table("Oktober", 31, "10");
+                fill_table("November", 30, "11");
+                fill_table("December", 31, "12");
+                </script>
+              </div>
+            </div>
+          
+            <div class="c-event__creator c-calendar__style js-event__creator">
+              <a href="javascript:;" class="o-btn js-event__close">Sluit <span class="fa fa-close"></span></a>
+              <form id="addEvent">
+                <input placeholder="Event name" type="text" name="name">
+                <input type="date" name="date">
+                <textarea placeholder="Notes" name="notes" cols="30" rows="10"></textarea>
+                <select name="tags">
+                    <option value="event">Activiteit</option>
+                    <option value="important">Belangrijk</option>
+                    <option value="birthday">Verjaardag</option>
+                    <option value="festivity">Anders</option>
+                  </select>
+              </form>
+              <br>
+              <a href="javascript:;" class="o-btn js-event__save">Opslaan <span class="fa fa-save"></span></a>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="col-sm">        
+        <!-- Uitvoering datum en klok op startscherm -->
+        <div class="containerClockTwee">
+          <div class="container-date">
+            <div id="weer-info"></div>
+            <img class="streep" src="images/streep.png" alt="streep" style="width: 300px; height: 10px;">
+            <div class="date-container"></div> 
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+    <div class="containerApps">
+      <div class="row">
+        <div class="col">
+            <a id="videoCallButton" onclick="makeCall()">
+              <img class="videoCallButtonImage" src="images/Telefoonknopdef-4.png" alt="Telefoon" style="width: 100px; height: 100px;"></a> 
+        </div>
+        <div class="col">
+          <div class="googlelinkBlok">
+            <a class="googlelink" href="https://www.google.com" target="_blank">
+              <img class="googlelinkImage" src="images/Internetknopdef-7.png" alt="Google" style="width: 100px; height: 100px;">
+            </a>        
+          </div>
+        </div>
+          <div class="col">
+            <button class="chatbot__button">
+              <img src="images/ChatbotW.png" alt="chatbot" style="width: 100px; height: 100px;">
+            </button>
+            <div class="chatbot">
+              <div class="chatbot__header">
+                <h3 class="chatbox__title">Freddy de chatbot</h3>
+                <span class="material-symbols-outlined">close</span>
+              </div>
+            <ul class="chatbot__box">
+              <li class="chatbot__chat incoming">
+                <span class="material-symbols-outlined">smart_toy</span>
+                <p>Hoi, hoe kan ik je helpen?</p>
+              </li>
+              <li class="chatbot__chat outgoing">
+                <p>...</p>
+              </li>
+            </ul>
+            <div class="chatbot__input-box">
+              <textarea
+                class="chatbot__textarea"
+                placeholder="Typ bericht naar Freddy"
+                required
+              ></textarea>
+              <span id="send-btn" class="material-symbols-outlined">send</span>
+            </div>
+          </div>
+         </div>
+
+
+         <div class="col">
+          <!-- <difv class="newsBlok"> -->
+            <!-- <link
+              rel="stylesheet"
+              href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@48,400,0,0"
+              /> -->
+            
+            <button class="newsbot__button">
+              <img src="images/Activiteiten-4.png" alt="newsbot" style="width: 100px; height: 100px;">
+              </button>
+              <div class="newsbot">
+              <div class="newsbot__header">
+                <h3 class="newsbox__title">ACTIVITEITEN</h3>
+                <span class="material-symbols-outlined">close</span>
+              </div>
+              <ul class="newsbot__box">
+              
+                <style type="text/css">
+                   .newsText {
+                    white-space: pre-wrap;
+                  } 
+                  .news-slider {
+                    /* display: flex !important; */
+                    /* justify-content: center !important;
+                    align-items: center !important; */
+                  }	
+                  .newscontainer {
+                    /* height: 100px !important;
+                    width: 500px !important; */
+
+                  }
+                  /* .navimg {
+                    height: 48px;
+                  } */
+                  /* .slick-arrow img {
+                    opacity: 100 !important;
+                  } */
+                  .blogPost--small .date, .blogPost--small .dateEl2 {
+                    color: #C34950 !important;
+                    background:  #ADCFF2 !important;
+                  }
+                  .blogPost--small .date span, .blogPost--small .dateEl2 span {
+                    color: #C34950 !important;
+                  }
+                  </style>
+                  
+                  <div class="newscontainer">
+                    <div class="newsrow">
+                      <div class="col-md-6 news-slider">
+                    
+                    <div class="slide">
+                      <div class="blogPost--small">
+                      <div class="media">
+                        <span class="pull-left"><a href="#"><span class="date"><span>27</span> <small>Nov</small></span></a></span>
+                        <div class="media-body">
+                        <h4 class="media-heading">
+                          <a href="https://www.natlab.nl/nl/programma/6644/joseph-hillel/city-dreamers?gclid=CjwKCAiAmZGrBhAnEiwAo9qHidIcPmnUuZhds1t1-tVxlu7KwUJ2mYr06Artcn0x8fJxTAYEM1LXKhoCLdEQAvD_BwE" target="_blank">NATLAB - City Dreamers</a>
+                        </h4>
+                        <p>Eindhoven – November 27, 2023 – City Dreamers is een film, geregisseerd door Joseph Hillel, waarin vier baanbrekende vrouwelijke architecten worden geportretteerd: Phyllis Lambert, Blanche Lemco van Ginkel, Cornelia Hahn Oberlander en Denise Scott Brown. Ze hebben allemaal een onuitwisbaar stempel gedrukt op de stedelijke ontwikkeling en bijgedragen aan menselijke en inclusieve steden in Noord-Amerika en Europa.
+                          - KOM GEZELLIG MEEDOEN - 
+                        </p>
+                        </div>
+                      </div>
+                      </div><!-- / blogPost -->
+                    </div><!-- / slide1 -->
+                  
+                      <div class="slide">
+                      <div class="blogPost--small">
+                      <div class="media">
+                        <span class="pull-left"><a href="#"><span class="date"><span>28</span> <small>Nov</small></span></a></span>
+                        <div class="media-body">
+                        <h4 class="media-heading">
+                          <a href="https://plein4.nl/2021/11/05/pubquiz/" target="_blank">PUBQUIZ</a>
+                        </h4>
+                        <p class="newsText"> PUBQUIZEN!! Elke laatste dinsdag van de maand!
+                          Altijd al willen weten wie de slimste in de groep is, de meeste nutteloze feitjes kent en tegelijkertijd een gezellige avond hebben waarbij veel wordt gelachen? De PubQuiz is dé manier om daar achter te komen! - WEET JIJ HET...? - 
+                        </p>
+                        </div>
+                      </div>
+                      </div><!-- / blogPost -->
+                    </div><!-- / slide2 -->
+                    
+                    <div class="slide">
+                      <div class="blogPost--small">
+                        <div class="media">
+                            <span class="pull-left"><a href="#"><span class="date"><span>28</span> <small>Nov</small></span></a></span>
+                            <div class="media-body">
+                              <h4 class="media-heading">
+                                <a href="https://www.tue.nl/en/our-university/calendar-and-events/28-11-2023-phd-defense-heqiu-song" target="_blank">PhD verdediging - Heqiu Song</a>
+                              </h4>
+                              <p class="newsText">Sociale robotten als motivators bij kinderen als muzikaal instrument. 
+                        
+                              </p>
+                            </div>
+                        </div>
+                      </div><!-- / blogPost -->
+                    </div><!-- / slide3 -->
+                  
+                    <div class="slide">
+                      <div class="blogPost--small">
+                      <div class="media">
+                        <span class="pull-left"><a href="#"><span class="date"><span>05</span> <small>Dec</small></span></a></span>
+                        <div class="media-body">
+                        <h4 class="media-heading">
+                          <a href="https://press.aboutamazon.com/2019/11/amazons-black-friday-deals-week-is-almost-here-more-deals-of-the-day-and-deeper-discounts-than-ever-before-on-buzzworthy-holiday-gifts-across-every-department" target="_blank">E-speurtocht Eindhoven</a>
+                        </h4>
+                        <p class="newsText"> Eindhoven is een stad waar weinig reisgidsen zich op richten. Ontdek de technologie- en designhub van Nederland met dit leuke, interactieve smartphonespel dat perfect is voor zowel families als vrienden.
+                        </p>
+                        </div>
+                      </div>
+                      </div><!-- / blogPost -->
+                    </div><!-- / slide4 -->	
+                  
+                      </div>
+                    </div>
+                    <div id="navigatieBlok">
+                      <button id="knopLinks" type="button" class="slick-arrow prev"><img class="navimgPrev" src="images/prev.png" alt="Previous"></button>
+                      <button id="knopRechts" type="button" class="slick-arrow next"><img class="navimgNext" src="images/next.png" alt="next"></button>                      
+                    </div>
+                  </div>
+                </ul> 
+              </div>
+
+
+          <!-- </div> -->
+        </div>
+
+         
+        </div>
+
+</body>
+</html>

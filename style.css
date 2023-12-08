@@ -1,0 +1,162 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@400;500&display=swap');
+
+body {
+    margin: 0; 
+    padding: 0; 
+    background-image: url('images/6174160.jpg');
+    background-size: cover; 
+    background-repeat: no-repeat; 
+    background-attachment: fixed; 
+  }
+  
+
+a {
+  text-decoration: none;
+}
+
+
+.navbar {
+  background-color: #ADCFF2 !important;
+  padding-left: 1em;
+  font-size: 1.1em;
+  font-weight: bold;
+  }
+
+  .navbar-brand {
+    color: white;
+    margin-left: 0.5em;
+    font-size: 2em;
+    padding: 0.1em;
+    font-family: 'Courgette', cursive;
+  }
+  .navbar-brand:hover {
+    color: #C34950;
+  }
+
+
+ /* datum beginscherm  en startscherm*/
+
+.container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.container-date {
+  width: 15em;
+  height: 5.3em;
+  margin-left: 0em;
+  margin-top: 1em;
+  background-color: #ADCFF2;
+  color: #ffffff;
+  text-align: center;
+  border-radius: 0.5em;
+  font-size: 3em;
+  box-shadow: 0 0 10px rgba(247, 70, 68, 0.5);
+}
+
+.day {
+  font-weight: bold;
+  text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
+  font-size: 1em;
+}
+
+.date {
+  font-weight: bold;
+  text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
+  font-size: 0.8em;
+  margin-top: -0.5em;
+}
+
+
+.time {
+  font-size: 1.8em;
+  margin-top: -0.3em;
+  color: #fff;
+  font-weight: bold;
+  font-family: 'Arial', sans-serif;
+  letter-spacing: 2px;
+  text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
+}
+
+/* Login startscherm */
+
+.jumbotron {
+  margin-top: 2em;
+}
+
+:root{
+    --first-color: #e7eaf6;
+    --second-color: #a2a8d3;
+    --third-color: red;
+    --fourth-color: #C34950;
+    --input-bgcolor: #f2f2f2;
+}
+
+.login-page {
+    width: 400px;
+}
+.form {
+    position: relative;
+    z-index: 1;
+    background: #ADCFF2;
+    width: 30em;
+    height: 17.5em;
+    border-radius: 2em;
+    padding: 40px;
+    text-align: center;
+    box-shadow: 0 0 10px rgba(247, 70, 68, 0.5);
+}
+.form input {
+    outline: 0;
+    background: var(--input-bgcolor);
+    width: 100%;
+    border: 0;
+    margin: 0 0 15px;
+    padding: 1rem;
+    font-size: 0.9rem;
+}
+.form button {
+    text-transform: uppercase;
+    outline: 0;
+    background: var(--fourth-color);
+    width: 100%;
+    border: 0;
+    padding: 15px;
+    color: #FFFFFF;
+    font-size: 1rem;
+    -webkit-transition: all 0.3s ease;
+    transition: all 0.3s ease;
+    cursor: pointer;
+}
+.loginknop {
+color: whitesmoke !important;
+}
+
+.form button:hover,.form button:active,.form button:focus {
+    background: var(--third-color);
+}
+.form .message {
+    margin: 15px 0 0;
+    color: var(--second-color);
+    font-size: 0.8rem;
+}
+.form .message a {
+    color: var(--third-color);
+    text-decoration: none;
+}
+.form .register-form {
+    display: none;
+}
+
+
+
+
+
+
+
+
+
+
+
+
